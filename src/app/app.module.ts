@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { DettaglioComponent } from './dettaglio/dettaglio.component';
 import { BrowseMoreComponent } from './browse-more/browse-more.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomeComponent,
     DettaglioComponent,
     BrowseMoreComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   bootstrap: [
     AppComponent
