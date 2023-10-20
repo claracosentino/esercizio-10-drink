@@ -50,7 +50,8 @@ body {
     word-spacing: 100vw;
 }
 
-.titolo-lettera-iniziale {
+.titolo-lettera-iniziale,
+.titolo-dettaglio {
     color: white;
     text-align: center;
 }
@@ -58,6 +59,18 @@ body {
 .browse-more p {
     color: white;
     font-size: 20px;
+}
+
+.dettaglio {
+    color: white;
+}
+
+.dettaglio p {
+    font-size: 25px;
+}
+
+.dettaglio li {
+    font-size: 18px;
 }
 
 footer {
