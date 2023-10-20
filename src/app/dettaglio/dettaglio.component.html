@@ -1,4 +1,4 @@
-<section class="titolo-dettaglio m-5">
+<section *ngIf="drinkDetail.length > 0" class="titolo-dettaglio m-5">
     <h2>{{drinkDetail[0].strDrink}}</h2>
 </section>
 
@@ -9,9 +9,9 @@
                 <img [src]="drinkDetail[0].strDrinkThumb" class="w-100">
                 <!--             <p>{{drinkDetail[0].strTags}}</p> -->
             </div>
-            <div class="drink-ingredienti col-6">
-                <p>Ingredienti</p>
-                <ul>
+            <div class="drink-info col-6">
+                <div class="drink-ingredienti">
+                    <p>Ingredienti</p>
                     <ul>
                         <li *ngIf="drinkDetail[0].strIngredient1">{{drinkDetail[0].strIngredient1}}</li>
                         <li *ngIf="drinkDetail[0].strIngredient2">{{drinkDetail[0].strIngredient2}}</li>
@@ -29,17 +29,19 @@
                         <li *ngIf="drinkDetail[0].strIngredient14">{{drinkDetail[0].strIngredient14}}</li>
                         <li *ngIf="drinkDetail[0].strIngredient15">{{drinkDetail[0].strIngredient15}}</li>
                     </ul>
-                </ul>
+                </div>
+
+                <div class="drink-tag mt-5">
+                    <p>Info varie</p>
+                    <ul>
+                        <li>Categoria: {{drinkDetail[0].strCategory}}</li>
+                        <li>Tipologia: {{drinkDetail[0].strTags}}</li>
+                        <li>Da servire con: {{drinkDetail[0].strGlass}}</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </div>
-
-</section>
-
-<section *ngIf="drinkDetail.length > 0">
-    <h3>Instructions</h3>
-    <p>Nome del cocktail: </p>
-
-    <h2>Glass: {{drinkDetail[0].strGlass}}</h2>
 
 </section>
