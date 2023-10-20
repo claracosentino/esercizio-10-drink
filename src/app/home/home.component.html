@@ -1,0 +1,18 @@
+<section class="titolo-lettera-iniziale m-5">
+    <h2>Scopri tutti i drink</h2>
+    <p>che iniziano con la lettera {{_testService.firstLetter}}</p>
+</section>
+
+<section class="tutti-drink">
+    <div class="row justify-content-center gap-3">
+        <div class=" card col-12 col-sm-6 col-md-4 col-lg-2" *ngFor="let drink of _testService.drinks">
+            <a routerLink="/dettaglio">
+                <div class="card__background" [ngStyle]="{background: 'url(' + drink.strDrinkThumb + ')', backgroundSize: 'cover', backgroundPosition: 'center'}"></div>
+                <div class="card__content">
+                    <p class="card__category">{{drink.strCategory}}</p>
+                    <h3 class="card__heading">{{drink.strDrink}}</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
