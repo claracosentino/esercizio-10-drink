@@ -1,42 +1,42 @@
-<section *ngIf="drinkDetail.length > 0" class="titolo-dettaglio m-5">
-    <h2>{{drinkDetail[0].strDrink}}</h2>
+<section *ngIf="this._testService.drinkDetail.length > 0" class="titolo-dettaglio m-5">
+    <h2>{{this._testService.drinkDetail[0].strDrink}}</h2>
 </section>
 
-<section *ngIf="drinkDetail.length > 0" class="dettaglio">
+<section *ngIf="this._testService.drinkDetail.length > 0" class="dettaglio">
     <div class="container">
         <div class="row">
             <div class="drink-immagine col-6">
-                <img [src]="drinkDetail[0].strDrinkThumb" class="w-100">
+                <img [src]="this._testService.drinkDetail[0].strDrinkThumb" class="w-100">
                 <!--             <p>{{drinkDetail[0].strTags}}</p> -->
             </div>
             <div class="drink-info col-6">
                 <div class="drink-ingredienti">
                     <p>Ingredienti</p>
                     <ul>
-                        <li *ngIf="drinkDetail[0].strIngredient1">{{drinkDetail[0].strIngredient1}}</li>
-                        <li *ngIf="drinkDetail[0].strIngredient2">{{drinkDetail[0].strIngredient2}}</li>
-                        <li *ngIf="drinkDetail[0].strIngredient3">{{drinkDetail[0].strIngredient3}}</li>
-                        <li *ngIf="drinkDetail[0].strIngredient4">{{drinkDetail[0].strIngredient4}}</li>
-                        <li *ngIf="drinkDetail[0].strIngredient5">{{drinkDetail[0].strIngredient5}}</li>
-                        <li *ngIf="drinkDetail[0].strIngredient6">{{drinkDetail[0].strIngredient6}}</li>
-                        <li *ngIf="drinkDetail[0].strIngredient7">{{drinkDetail[0].strIngredient7}}</li>
-                        <li *ngIf="drinkDetail[0].strIngredient8">{{drinkDetail[0].strIngredient8}}</li>
-                        <li *ngIf="drinkDetail[0].strIngredient9">{{drinkDetail[0].strIngredient9}}</li>
-                        <li *ngIf="drinkDetail[0].strIngredient10">{{drinkDetail[0].strIngredient10}}</li>
-                        <li *ngIf="drinkDetail[0].strIngredient11">{{drinkDetail[0].strIngredient11}}</li>
-                        <li *ngIf="drinkDetail[0].strIngredient12">{{drinkDetail[0].strIngredient12}}</li>
-                        <li *ngIf="drinkDetail[0].strIngredient13">{{drinkDetail[0].strIngredient13}}</li>
-                        <li *ngIf="drinkDetail[0].strIngredient14">{{drinkDetail[0].strIngredient14}}</li>
-                        <li *ngIf="drinkDetail[0].strIngredient15">{{drinkDetail[0].strIngredient15}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient1">{{this._testService.drinkDetail[0].strIngredient1}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient2">{{this._testService.drinkDetail[0].strIngredient2}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient3">{{this._testService.drinkDetail[0].strIngredient3}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient4">{{this._testService.drinkDetail[0].strIngredient4}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient5">{{this._testService.drinkDetail[0].strIngredient5}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient6">{{this._testService.drinkDetail[0].strIngredient6}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient7">{{this._testService.drinkDetail[0].strIngredient7}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient8">{{this._testService.drinkDetail[0].strIngredient8}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient9">{{this._testService.drinkDetail[0].strIngredient9}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient10">{{this._testService.drinkDetail[0].strIngredient10}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient11">{{this._testService.drinkDetail[0].strIngredient11}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient12">{{this._testService.drinkDetail[0].strIngredient12}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient13">{{this._testService.drinkDetail[0].strIngredient13}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient14">{{this._testService.drinkDetail[0].strIngredient14}}</li>
+                        <li *ngIf="this._testService.drinkDetail[0].strIngredient15">{{this._testService.drinkDetail[0].strIngredient15}}</li>
                     </ul>
                 </div>
 
                 <div class="drink-tag mt-5">
                     <p>Info varie</p>
                     <ul>
-                        <li>Categoria: {{drinkDetail[0].strCategory}}</li>
-                        <li>Tipologia: {{drinkDetail[0].strTags}}</li>
-                        <li>Da servire con: {{drinkDetail[0].strGlass}}</li>
+                        <li>Categoria: {{this._testService.drinkDetail[0].strCategory}}</li>
+                        <li>Tipologia: {{this._testService.drinkDetail[0].strTags}}</li>
+                        <li>Da servire con: {{this._testService.drinkDetail[0].strGlass}}</li>
                     </ul>
                 </div>
 
@@ -45,3 +45,5 @@
     </div>
 
 </section>
+
+<app-istruzioni></app-istruzioni>

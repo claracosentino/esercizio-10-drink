@@ -1,0 +1,31 @@
+<section class="istruzioni m-5" *ngIf="_testService.drinkDetail.length > 0">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <button (click)="changeLanguage('en')" type="button" class="btn btn-outline-light m-1 col-md-auto">🇬🇧</button>
+            <button (click)="changeLanguage('de')" type="button" class="btn btn-outline-light m-1 col-md-auto">🇩🇪</button>
+            <button (click)="changeLanguage('it')" type="button" class="btn btn-outline-light m-1 col-md-auto">🇮🇹</button>
+            <button (click)="changeLanguage('es')" type="button" class="btn btn-outline-light m-1 col-md-auto">🇪🇸</button>
+            <button (click)="changeLanguage('fr')" type="button" class="btn btn-outline-light m-1 col-md-auto">🇫🇷</button>
+        </div>
+    </div>
+
+
+
+    <p *ngIf="linguaSelezionata == 'it'">
+        {{_testService.drinkDetail[0].strInstructionsIT ? _testService.drinkDetail[0].strInstructionsIT : "Description not available"}}
+    </p>
+    <p *ngIf="linguaSelezionata == 'en'">
+        {{_testService.drinkDetail[0].strInstructions ? _testService.drinkDetail[0].strInstructions : "Description not available"}}
+    </p>
+    <p *ngIf="linguaSelezionata == 'de'">
+        {{_testService.drinkDetail[0].strInstructionsDE ? _testService.drinkDetail[0].strInstructionsDE : "Description not available"}}
+    </p>
+    <p *ngIf="linguaSelezionata == 'es'">
+        {{_testService.drinkDetail[0].strInstructionsES ? _testService.drinkDetail[0].strInstructionsES : "Description not available"}}
+    </p>
+    <p *ngIf="linguaSelezionata == 'fr'">
+        {{_testService.drinkDetail[0].strInstructionsFR ? _testService.drinkDetail[0].strInstructionsFR : "Description not available"}}
+    </p>
+
+</section>

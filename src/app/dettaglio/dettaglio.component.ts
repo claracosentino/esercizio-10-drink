@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Drink } from '../models/drinks.interface';
+import { TestService } from '../test.service';
 
 @Component({
   selector: 'app-dettaglio',
@@ -8,14 +9,14 @@ import { Drink } from '../models/drinks.interface';
 })
 export class DettaglioComponent implements OnInit {
 
-  drinkDetail: Array<Drink> = [];
+
   /* ingredienti: Array<string> = []; */
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, public _testService: TestService) {}
 
   ngOnInit(){
     this.http.get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=15200').subscribe((response:any) => {
-      this.drinkDetail = response.drinks;
+      this._testService.drinkDetail = response.drinks;
       
       /* Object.keys(this.drinkDetail[0]).forEach((key)=>{ 
           if(key.startsWith('strIngredient')){

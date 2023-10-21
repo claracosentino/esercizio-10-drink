@@ -7,6 +7,7 @@ import {Drink} from "./models/drinks.interface"
 export class TestService {
     constructor (){}
 
-    public drinks:Array<Drink> = []
+    public drinks:Array<Drink> = [];
     public firstLetter: string = 'a';
+    public drinkDetail: Array<Drink> = [];
 }

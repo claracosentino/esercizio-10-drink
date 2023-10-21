@@ -10,6 +10,7 @@ import { DettaglioComponent } from './dettaglio/dettaglio.component';
 import { BrowseMoreComponent } from './browse-more/browse-more.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { IstruzioniComponent } from './istruzioni/istruzioni.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { FooterComponent } from './footer/footer.component';
     DettaglioComponent,
     BrowseMoreComponent,
     NavbarComponent,
+    IstruzioniComponent,
     FooterComponent
   ],
   bootstrap: [
