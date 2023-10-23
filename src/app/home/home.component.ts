@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 constructor(private http: HttpClient, public _testService: TestService, private apiService: ApiService) {}
 
   ngOnInit() {
-    this.apiService.searchByF().subscribe ((response:any) => {
+    this.apiService.searchByF('a').subscribe ((response:any) => {
 	    this._testService.drinks = response.drinks
     })
   }

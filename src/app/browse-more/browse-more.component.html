@@ -4,7 +4,8 @@
             <p>Browse more</p>
         </div>
         <div class="d-flex justify-content-center">
-            <button *ngFor="let letter of alphabet as string" (click)="changeLetterToSearch(letter)" routerLink="/home" type="button" class="btn btn-outline-light m-1">{{letter}}</button>
+            <button *ngFor="let letter of alphabet as string" [routerLink]="'/home/' + letter" type="button" class="btn btn-outline-light m-1">{{letter}}</button>
+
         </div>
     </div>
 </section>

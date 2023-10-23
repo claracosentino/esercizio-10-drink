@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
     constructor(private http: HttpClient, public _testService: TestService) {}
 
-    searchByF(){
-        return this.http.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${this._testService.firstLetter}`)
+    searchByF(firstLetter: string){
+        return this.http.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${firstLetter}`)
     }
 
 }
