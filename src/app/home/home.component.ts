@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Drink } from '../models/drinks.interface';
 import { TestService } from '../test.service';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +10,11 @@ import { TestService } from '../test.service';
 })
 export class HomeComponent implements OnInit {
 
-constructor(private http: HttpClient, public _testService: TestService) {}
+constructor(private http: HttpClient, public _testService: TestService, private apiService: ApiService) {}
 
   ngOnInit() {
-    this.http.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${this._testService.firstLetter}`).subscribe((response:any) => {
-      this._testService.drinks = response.drinks
+    this.apiService.searchByF().subscribe ((response:any) => {
+	    this._testService.drinks = response.drinks
     })
   }
 

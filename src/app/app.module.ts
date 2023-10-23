@@ -11,6 +11,7 @@ import { BrowseMoreComponent } from './browse-more/browse-more.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { IstruzioniComponent } from './istruzioni/istruzioni.component';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   imports: [
@@ -29,6 +30,9 @@ import { IstruzioniComponent } from './istruzioni/istruzioni.component';
     NavbarComponent,
     IstruzioniComponent,
     FooterComponent
+  ],
+  providers: [
+    ApiService
   ],
   bootstrap: [
     AppComponent
