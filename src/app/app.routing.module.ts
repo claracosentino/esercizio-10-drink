@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { DettaglioComponent } from './dettaglio/dettaglio.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent},
+  { path: 'home/:letter', component: HomeComponent},
   { path: 'dettaglio/:id', component: DettaglioComponent},
   { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `first-component`
   // { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page

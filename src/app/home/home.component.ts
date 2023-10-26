@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Drink } from '../models/drinks.interface';
 import { TestService } from '../test.service';
 import { ApiService } from '../services/api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,10 +12,12 @@ import { ApiService } from '../services/api.service';
 export class HomeComponent implements OnInit {
 
   filtroDrink:string = 'tutti'
+  lettera = this.activatedRoute.snapshot.paramMap.get('letter');
 
-  constructor(public _testService: TestService, private apiService: ApiService) {}
+  constructor(public _testService: TestService, private apiService: ApiService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
+    this.lettera = this.activatedRoute.snapshot.paramMap.get('letter');
     this.apiService.searchByF().subscribe ((response:any) => {
 	    this._testService.drinks = response.drinks
     })
@@ -59,7 +62,5 @@ export class HomeComponent implements OnInit {
         this.filtroDrink = 'tutti'
         break;
     }
-
-    console.log(this.filtroDrink)
   }
 }
