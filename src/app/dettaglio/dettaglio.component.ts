@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Drink } from '../models/drinks.interface';
 import { TestService } from '../test.service';
+import { ApiService } from '../services/api.service';
+
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-dettaglio',
@@ -9,22 +12,18 @@ import { TestService } from '../test.service';
 })
 export class DettaglioComponent implements OnInit {
 
+  drinkId: number = 0
 
-  /* ingredienti: Array<string> = []; */
-
-  constructor(private http: HttpClient, public _testService: TestService) {}
+  constructor(private http: HttpClient, public _testService: TestService, private apiService: ApiService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(){
-    this.http.get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=15200').subscribe((response:any) => {
+    this.getId()
+    this.apiService.getDrinkDetail(this.drinkId).subscribe((response:any) => {
       this._testService.drinkDetail = response.drinks;
-      
-      /* Object.keys(this.drinkDetail[0]).forEach((key)=>{ 
-          if(key.startsWith('strIngredient')){
-              this.ingredienti.push(this.drinkDetail[0].key);
-              console.log(this.ingredienti)
-          }
-      }) */
-      
     })
+  }
+
+  getId(){
+    this.drinkId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
   }
 }

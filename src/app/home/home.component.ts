@@ -10,7 +10,9 @@ import { ApiService } from '../services/api.service';
 })
 export class HomeComponent implements OnInit {
 
-constructor(private http: HttpClient, public _testService: TestService, private apiService: ApiService) {}
+  filtroDrink:string = 'tutti'
+
+  constructor(public _testService: TestService, private apiService: ApiService) {}
 
   ngOnInit() {
     this.apiService.searchByF().subscribe ((response:any) => {
@@ -18,5 +20,46 @@ constructor(private http: HttpClient, public _testService: TestService, private 
     })
   }
 
-  
+  impostaFiltro(filtro:string){
+    switch (filtro) {
+      case 'ordinary-drink':
+        this.filtroDrink = 'Ordinary Drink'
+        break;
+      case 'cocktail':
+        this.filtroDrink = 'Cocktail'
+        break;
+      case 'shake':
+        this.filtroDrink = 'Shake'
+        break;
+      case 'other-unknown':
+        this.filtroDrink = 'Other / Unknown'
+        break;
+      case 'cocoa':
+        this.filtroDrink = 'Cocoa'
+        break;
+      case 'shot':
+        this.filtroDrink = 'Shot'
+        break;
+      case 'coffee-tea':
+        this.filtroDrink = 'Coffee / Tea'
+        break;
+      case 'homemade-liqueur':
+        this.filtroDrink = 'Homemade Liqueur'
+        break;
+      case 'punch-party-drink':
+        this.filtroDrink = 'Punch / Party Drink'
+        break;
+      case 'beer':
+        this.filtroDrink = 'Beer'
+        break;
+      case 'soft-drink':
+        this.filtroDrink = 'Soft Drink'
+        break;
+      case 'tutti':
+        this.filtroDrink = 'tutti'
+        break;
+    }
+
+    console.log(this.filtroDrink)
+  }
 }

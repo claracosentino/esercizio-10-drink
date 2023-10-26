@@ -3,16 +3,33 @@
     <p>che iniziano con la lettera {{_testService.firstLetter}}</p>
 </section>
 
+<section class="filtri">
+    <button (click)="impostaFiltro('ordinary-drink')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Ordinary Drink'" [class.btn-light]="filtroDrink == 'Ordinary Drink'">Ordinary Drink</button>
+    <button (click)="impostaFiltro('cocktail')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Cocktail'" [class.btn-light]="filtroDrink == 'Cocktail'">Cocktail</button>
+    <button (click)="impostaFiltro('shake')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Shake'" [class.btn-light]="filtroDrink == 'Shake'">Shake</button>
+    <button (click)="impostaFiltro('other-unknown')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Other / Unknown'" [class.btn-light]="filtroDrink == 'Other / Unknown'">Other / Unknown</button>
+    <button (click)="impostaFiltro('cocoa')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Cocoa'" [class.btn-light]="filtroDrink == 'Cocoa'">Cocoa</button>
+    <button (click)="impostaFiltro('shot')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Shot'" [class.btn-light]="filtroDrink == 'Shot'">Shot</button>
+    <button (click)="impostaFiltro('coffee-tea')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Coffee / Tea'" [class.btn-light]="filtroDrink == 'Coffee / Tea'">Coffee / Tea</button>
+    <button (click)="impostaFiltro('homemade-liqueur')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Homemade Liqueur'" [class.btn-light]="filtroDrink == 'Homemade Liqueur'">Homemade Liqueur</button>
+    <button (click)="impostaFiltro('punch-party-drink')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Punch / Party Drink'" [class.btn-light]="filtroDrink == 'Punch / Party Drink'">Punch / Party Drink</button>
+    <button (click)="impostaFiltro('beer')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Beer'" [class.btn-light]="filtroDrink == 'Beer'">Beer</button>
+    <button (click)="impostaFiltro('soft-drink')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Soft Drink'" [class.btn-light]="filtroDrink == 'Soft Drink'">Soft Drink</button>
+    <button (click)="impostaFiltro('tutti')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Tutti'" [class.btn-light]="filtroDrink == 'Tutti'">Tutti</button>
+</section>
+
 <section class="tutti-drink">
     <div class="row justify-content-center gap-3">
-        <div class=" card col-12 col-sm-6 col-md-4 col-lg-2" *ngFor="let drink of _testService.drinks">
-            <a routerLink="/dettaglio">
-                <div class="card__background" [ngStyle]="{background: 'url(' + drink.strDrinkThumb + ')', backgroundSize: 'cover', backgroundPosition: 'center'}"></div>
-                <div class="card__content">
-                    <p class="card__category">{{drink.strCategory}}</p>
-                    <h3 class="card__heading">{{drink.strDrink}}</h3>
-                </div>
-            </a>
-        </div>
+        <ng-container *ngFor="let drink of _testService.drinks">
+            <div *ngIf="filtroDrink === 'tutti' || drink.strCategory === filtroDrink" class="card col-12 col-sm-6 col-md-4 col-lg-2">
+                <button routerLink="/dettaglio/{{drink.idDrink}}">
+                    <div class="card__background" [ngStyle]="{background: 'url(' + drink.strDrinkThumb + ')', backgroundSize: 'cover', backgroundPosition: 'center'}"></div>
+                    <div class="card__content">
+                        <p class="card__category">{{drink.strCategory}}</p>
+                        <h3 class="card__heading">{{drink.strDrink}}</h3>
+                    </div>
+                </button>
+            </div>
+        </ng-container>
     </div>
 </section>

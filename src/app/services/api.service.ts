@@ -12,4 +12,8 @@ export class ApiService {
         return this.http.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${this._testService.firstLetter}`)
     }
 
+    getDrinkDetail(idDrink:number){
+      return this.http.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`)
+    }
+
 }

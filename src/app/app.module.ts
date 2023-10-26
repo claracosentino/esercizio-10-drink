@@ -19,8 +19,7 @@ import { ApiService } from './services/api.service';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule,
-   
+    FormsModule
   ],
   declarations: [
     AppComponent,
