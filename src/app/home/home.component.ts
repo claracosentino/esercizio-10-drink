@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Drink } from '../models/drinks.interface';
 import { TestService } from '../test.service';
 import { ApiService } from '../services/api.service';
 import { ActivatedRoute } from '@angular/router';
@@ -12,13 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   filtroDrink:string = 'tutti'
-  lettera = this.activatedRoute.snapshot.paramMap.get('letter');
 
-  constructor(public _testService: TestService, private apiService: ApiService, private activatedRoute: ActivatedRoute) {}
+  constructor(public _testService: TestService, private apiService: ApiService, public activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.lettera = this.activatedRoute.snapshot.paramMap.get('letter');
-    this.apiService.searchByF().subscribe ((response:any) => {
+    this.apiService.searchByF(this.activatedRoute.snapshot.paramMap.get('letter')).subscribe ((response:any) => {
 	    this._testService.drinks = response.drinks
     })
   }

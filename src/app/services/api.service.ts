@@ -9,10 +9,15 @@ import { ActivatedRoute } from '@angular/router';
 export class ApiService {
     constructor(private http: HttpClient, public _testService: TestService, private activatedRoute: ActivatedRoute) {}
 
-    lettera = this.activatedRoute.snapshot.paramMap.get('letter');
+    lettera:string | null = 'a'
 
-    searchByF(){
-        return this.http.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${this.lettera}`)
+    getLettera(){
+      this.lettera = this.activatedRoute.snapshot.paramMap.get('letter');
+    }
+
+    searchByF(lettera:string | null){
+        this.getLettera()
+        return this.http.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${lettera}`)
     }
 
     getDrinkDetail(idDrink:number){

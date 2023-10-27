@@ -16,6 +16,8 @@ export class IstruzioniComponent implements OnInit {
 
   changeLanguage(lingua: string){
     this.linguaSelezionata = lingua
+    console.log('drink detail' + this._testService.drinkDetail)
+    console.log('drinks' + this._testService.drinks)
   }
   
 }

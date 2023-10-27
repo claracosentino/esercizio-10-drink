@@ -1,9 +1,9 @@
 <section class="titolo-lettera-iniziale m-5">
     <h2>Scopri tutti i drink</h2>
-    <p>che iniziano con la lettera {{_testService.firstLetter}}</p>
+    <p>che iniziano con la lettera {{this.activatedRoute.snapshot.paramMap.get('letter')}}</p>
 </section>
 
-<section class="filtri">
+<section class="filtri d-flex justify-content-center m-5">
     <button (click)="impostaFiltro('ordinary-drink')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Ordinary Drink'" [class.btn-light]="filtroDrink == 'Ordinary Drink'">Ordinary Drink</button>
     <button (click)="impostaFiltro('cocktail')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Cocktail'" [class.btn-light]="filtroDrink == 'Cocktail'">Cocktail</button>
     <button (click)="impostaFiltro('shake')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Shake'" [class.btn-light]="filtroDrink == 'Shake'">Shake</button>
@@ -15,7 +15,7 @@
     <button (click)="impostaFiltro('punch-party-drink')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Punch / Party Drink'" [class.btn-light]="filtroDrink == 'Punch / Party Drink'">Punch / Party Drink</button>
     <button (click)="impostaFiltro('beer')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Beer'" [class.btn-light]="filtroDrink == 'Beer'">Beer</button>
     <button (click)="impostaFiltro('soft-drink')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Soft Drink'" [class.btn-light]="filtroDrink == 'Soft Drink'">Soft Drink</button>
-    <button (click)="impostaFiltro('tutti')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'Tutti'" [class.btn-light]="filtroDrink == 'Tutti'">Tutti</button>
+    <button (click)="impostaFiltro('tutti')" class="btn m-1" [class.btn-outline-light]="filtroDrink != 'tutti'" [class.btn-light]="filtroDrink == 'tutti'">Tutti</button>
 </section>
 
 <section class="tutti-drink">
